@@ -1,8 +1,5 @@
-<li><p>{{name.official}}</p>
-  <p>{{capital}}</p>
-  <p>{{population}}</p>
-  <p>{{flags.svg}}</p>
-  <img width='200px' height='200px' href={{flags.svg}} />
-  <svg width='200' height='200' href={{flags.svg}}>
-  </svg>
-  <p>{{languages}}</p></li>
+<img class='list_img' src={{flags.svg}} />
+<span class='list_title-solo'> {{name.official}}</span>
+<p class='list_text-title'> Capital: <span class='list_text'>{{capital}}</span></p>
+<p class='list_text-title'> Population: <span class='list_text'>{{population}}</span></p>
+<p class='list_text-title'> Languages: <span class='list_text'>{{languages}}</span></p>
