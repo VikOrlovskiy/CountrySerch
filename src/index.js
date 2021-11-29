@@ -1,5 +1,6 @@
 import './css/styles.css';
 import CountriesApiService from './js/fetchCountries';
+import countryCard from './templates/country';
 // =====================================================
 const debounce = require('lodash.debounce');
 const DEBOUNCE_DELAY = 300;
@@ -14,6 +15,7 @@ const countriesApiService = new CountriesApiService();
 
 function updateValue(e) {
   console.log(e.target.value);
+  Refs.list.innerHTML = '';
   countriesApiService.value = e.target.value;
   countriesApiService.fetchCountries().then(countries => {
     createCountyCard(countries);
@@ -21,8 +23,9 @@ function updateValue(e) {
 }
 // ======================================================
 function createCountyCard(countries) {
+  console.log(countries);
   return countries.map(({ name, capital, population, flags, languages }) => {
-    // Refs.list.innerHTML = { name, capital, population, flags, languages };
-    return console.log({ name, capital, population, flags, languages });
+    console.log(typeof countryCard({ name, capital, population, flags, languages }));
+    Refs.list.innerHTML = countryCard({ name, capital, population, flags, languages });
   });
 }
