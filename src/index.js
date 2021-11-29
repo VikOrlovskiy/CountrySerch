@@ -26,6 +26,9 @@ function createCountyCard(countries) {
   console.log(countries);
   return countries.map(({ name, capital, population, flags, languages }) => {
     console.log(typeof countryCard({ name, capital, population, flags, languages }));
-    Refs.list.innerHTML = countryCard({ name, capital, population, flags, languages });
+    Refs.list.insertAdjacentHTML(
+      'afterbegin',
+      countryCard({ name, capital, population, flags, languages }),
+    );
   });
 }
