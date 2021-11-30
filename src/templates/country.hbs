@@ -2,4 +2,5 @@
 <span class='list_title-solo'> {{name.official}}</span>
 <p class='list_text-title'> Capital: <span class='list_text'>{{capital}}</span></p>
 <p class='list_text-title'> Population: <span class='list_text'>{{population}}</span></p>
-<p class='list_text-title'> Languages: <span class='list_text'>{{languages}}</span></p>
+<p class='list_text-title'>Languages:{{#each languages}}
+    <span class='list_text'>{{this}}</span>{{/each}}</p>
